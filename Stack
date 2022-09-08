@@ -1,0 +1,39 @@
+#include <iostream>
+#include <conio.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+#include <conio.h>
+#include <string.h>
+#include <ctype.h>
+struct Nodo{
+	int dato;
+	Nodo *siguiente;
+};
+
+void Push(Nodo *&, int);
+void Show(Nodo *&);
+
+int main(){
+	Nodo *pila = NULL;
+	int i, n;
+	srand(time(NULL));
+	for(i=0;i<15;i++){
+		n=(rand()%19)+1;
+		Push(pila, n);
+	}
+	while (pila!=NULL){
+	Show(pila);
+	}
+}
+
+void Push(Nodo *&pila, int n){
+	Nodo *nuevo_nodo=new Nodo();
+	nuevo_nodo->dato=n;
+	nuevo_nodo->siguiente=pila;
+	pila=nuevo_nodo;
+}
+void Show (Nodo *&pila){
+		printf("\n\t%d", pila->	dato);
+		pila=pila->siguiente;
+}
