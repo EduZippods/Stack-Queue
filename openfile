@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <conio.h>
+
+int main(){
+	system("cls");
+	FILE *A;
+	int i;
+	if ((A=fopen("numero.txt", "w"))==NULL){
+		printf("\n \n Error en la apertura de archivo...");
+	}
+	for (i=0;i<10;i++){
+		fprintf(A, "\n %d", i);
+		printf("%d\n", i);
+	}
+	
+	fclose(A);
+}
